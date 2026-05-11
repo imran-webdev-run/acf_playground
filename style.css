@@ -108,15 +108,27 @@ Hero Style End
 Smart Media Style Start
 ===========================================
 */
+.smart-media-section {
+  grid-area: media;
+}
+.smart-content-section {
+	grid-area: content;
+}
 .smart-media-section-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   align-items: center;
 }
-.smart-media-section.right {
-  order: 2;
+.smart-media-section-wrapper.media-left {
+	grid-template-columns: 600px 1fr;
+  	grid-template-areas: "media content";
 }
+.smart-media-section-wrapper.media-right {
+	grid-template-columns: 1fr 600px;
+  	grid-template-areas: "content media";
+}
+
 .smart-media-section .smart-single-image, .smart-media-section .smart-video {
   height: 700px;
   border-radius: 20px;
@@ -147,22 +159,89 @@ Smart Media Style Start
 
 /* 
 ===========================================
-Smart Media Style Start
+Smart Media Style End
 ===========================================
 */
 
 
 /* 
 ===========================================
-Smart Media Style Start
+Feature Section Style Start
 ===========================================
 */
 .feature-icon {
-	width: 16px;
+	width: 32px;
+	padding: 8px;
+	background: hsl(217deg 91% 60% / 10%);
+	border-radius: 10px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.feature-section-top-heading {
+	text-align: center;
+}
+
+.feature-section-items {
+	display: grid;
+	width: 900px;
+	gap: 32px;
+	margin: 40px auto 0;
+}
+
+.feature-section-items.columns-1 {
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.feature-section-items.columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.feature-section-items.columns-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.feature-section-items.columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+.feature-section-item {
+  background: #fff;
+  border: 1px solid hsl(220 13% 91%);
+  border-radius: 12px;
+  padding: 16px;
+}
+.feature-section {
+  background: hsl(220deg 14% 96% / 30%);
+  margin-top: 50px;
+}
+
+.feature-section-item .title h4 {
+	font-size: 20px;
+	margin-top: 16px;
+	margin-bottom: 0;
+}
+.feature-section-item .description {
+	font-size: 16px;
+	color: hsl(220 9% 46%);
+	margin-top: 16px;
+}
+.feature-section-list-items {
+  margin-bottom: 0;
+  padding-left: 12px;
+  color: hsl(220 9% 46%);
+}
+.feature-section-item-list {
+	border-top: 1px solid hsl(220 13% 91%);
+	margin-top: 16px;
+}
+.feature-section-list-items li::marker {
+  color: hsl(217 91% 60%);
+  font-size: 14px;
 }
 
 /* 
 ===========================================
-Smart Media Style Start
+Feature Section Style End
 ===========================================
 */

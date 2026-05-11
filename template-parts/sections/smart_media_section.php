@@ -16,14 +16,20 @@
     if ( $image_type == 'gallery'){
         $section_calss = 'image-gallery';
     }
+
+    if ( $media_position == 'left'){
+        $media_position_calss = 'media-left';
+    } else {
+        $media_position_calss = 'media-right';
+    }
     
 ?>
 
 
 <section class="layout-padding">
-    <div class="smart-media-section-wrapper pt-lg-50 pt-30">
+    <div class="smart-media-section-wrapper pt-lg-50 pt-30 <?php echo esc_attr($media_position_calss) ; ?>">
 
-        <div class="smart-media-section <?php echo esc_attr($section_calss) ; ?> <?php echo esc_attr($media_position) ; ?>">
+        <div class="smart-media-section <?php echo esc_attr($section_calss) ; ?>">
             <?php if ($smart_media_type == 'image') : ?>
                 <?php if ($image_type == 'single' && !empty($smart_single_image)) : ?>
                     <div class="smart-single-image media">
