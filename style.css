@@ -1,0 +1,168 @@
+/*!
+Theme Name: ACF Playground
+Theme URI: http://underscores.me/
+Author: Imran Hossain
+Author URI: https://www.webdevrun.com/
+Description: Description
+Version: 1.1.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: acf_playground
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+ACF Playground is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+.site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.menu-menu-container ul {
+	display: flex;
+	gap: 16px;
+	list-style: none;
+}
+.site-branding {
+	width: 180px;
+}
+
+/* 
+===========================================
+Hero Style Start
+===========================================
+*/
+.bg-type-color .hero-inner {
+	border-radius: 20px;
+}
+
+.bg-type-color .hero-content {
+	text-align: center;
+	color: #fff;
+	padding-bottom: 50px;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 700px;
+	margin: 0 auto;
+}
+.hero-description {
+  font-size: 16px;
+}
+.cta-btn a {
+	text-decoration: none;
+	margin-top: 20px;
+	display: inline-block;
+	background: #fff;
+	padding: 12px 24px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 500;
+}
+.cta-btn a svg {
+	margin-left: 10px;
+}
+
+.bg-type-video .hero-inner, .bg-type-image .hero-inner {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+}
+.hero-media-wrapper {
+  width: 100%;
+  grid-column: 1;
+  grid-row: 1;
+}
+.hero-content {
+  grid-column: 1;
+  grid-row: 1;
+  width: 700px;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+}
+.hero-image, .hero-video {
+	width: 100%;
+	height: 700px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+/* 
+===========================================
+Hero Style End
+===========================================
+*/
+
+/* 
+===========================================
+Smart Media Style Start
+===========================================
+*/
+.smart-media-section-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+.smart-media-section.right {
+  order: 2;
+}
+.smart-media-section .smart-single-image, .smart-media-section .smart-video {
+  height: 700px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.smart-media-section-description p {
+  font-size: 18px;
+  color: hsl(220 9% 46%);
+}
+.site-btn.btn {
+  gap: 10px;
+  background: #2b80c7;
+  color: #fff;
+  margin-top: 20px;
+}
+.smart-media-section.image-gallery .gallery-images-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.gallery-images-wrapper.column-count-3 .smart-gallery-images:last-child{
+	grid-column: span 2;
+}
+.smart-gallery-images {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* 
+===========================================
+Smart Media Style Start
+===========================================
+*/
+
+
+/* 
+===========================================
+Smart Media Style Start
+===========================================
+*/
+.feature-icon {
+	width: 16px;
+}
+
+/* 
+===========================================
+Smart Media Style Start
+===========================================
+*/
