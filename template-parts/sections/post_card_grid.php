@@ -4,7 +4,9 @@
     $latest_post_type_source = get_sub_field('latest_post_type_source') ; // ACF Group Field : Latest Post Query
     $post_perpage = $latest_post_type_source['post_perpage'] ; // ACF Number Field : Post Perpage
 
-    $columns = get_sub_field('columns')
+    $layout_style = get_sub_field('layout_style');
+    $columns = get_sub_field('columns');
+    
     
 
 
@@ -17,7 +19,7 @@
 
         <?php if ( $post_type == 'latest') : ?>
 
-            <div class="latest-post-card-items">
+            <div class="latest-post-card-items <?php if ( $layout_style === 'grid') : ?> <?php echo esc_attr( $layout_style ) ; ?> <?php endif; ?> columns-<?php echo esc_attr( $columns ) ; ?> ">
                 <?php 
                     $latest_posts = new WP_Query(array(
                         'post_type'         => $latest_post_type_source,
@@ -47,7 +49,7 @@
 
         <?php elseif ( $post_type == 'manual' ) : ?>
 
-            <div class="manually-post-card-items">
+            <div class="manually-post-card-items <?php echo esc_attr( $layout_style ) ; ?> columns-<?php echo esc_attr( $columns ) ; ?>">
 
                 <?php $manually_post = get_sub_field('manually_post'); 
                         if ( $manually_post ) :
@@ -59,7 +61,7 @@
                 <div class="product-item">
                     <div class="product-inner">
                         <div class="post-thumb">
-                            <?php the_post_thumbnail(); ?>
+                            <?php echo get_the_post_thumbnail( $post->ID ); ?>
                         </div>
                         <h3><?php the_title(); ?></h3>
                         <div class="short-description">

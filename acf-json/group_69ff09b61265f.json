@@ -939,6 +939,31 @@
                             "bidirectional_target": []
                         },
                         {
+                            "key": "field_6a031b836ca9e",
+                            "label": "Layout Style",
+                            "name": "layout_style",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "grid": "Grid",
+                                "carousel": "Carousel",
+                                "list": "List"
+                            },
+                            "default_value": "carousel",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "layout": "horizontal"
+                        },
+                        {
                             "key": "field_6a0309f68b9f4",
                             "label": "Columns",
                             "name": "columns",
@@ -946,7 +971,15 @@
                             "type": "button_group",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6a031b836ca9e",
+                                        "operator": "==",
+                                        "value": "grid"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -991,5 +1024,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1778584578
+    "modified": 1778591225
 }
