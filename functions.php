@@ -161,7 +161,8 @@ function acf_playground_scripts() {
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'acf_playground_scripts' );
+
+
 
 // ACF Option Page
 function new_standard_acf_option_pages() {
@@ -191,3 +192,21 @@ function new_standard_acf_option_pages() {
 }
 
 add_action('acf/init', 'new_standard_acf_option_pages');
+
+// ACF dynamic post type filter
+add_filter('acf/load_field/name=post_type', function($field){
+
+    $post_types = get_post_types(['public' => true], 'objects');
+
+    $field['choices'] = [];
+
+    foreach($post_types as $post_type){
+        if(in_array($post_type->name, ['attachment'])){
+            continue;
+        }
+
+        $field['choices'][$post_type->name] = $post_type->labels->singular_name;
+    }
+
+    return $field;
+});

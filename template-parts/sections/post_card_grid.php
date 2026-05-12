@@ -1,33 +1,37 @@
 <?php
-    $post_card                  = get_sub_field('post_card') ; // Field Type Button Group Post Query = post, project, product.
+    
+$post_type = get_field('post_source');
+$limit     = get_field('posts_limit') ?: 5;
+$title     = get_field('section_title');
 
-    $post_type                  = get_sub_field('post_type') ; // Field Type Group Type. 
-    $project_post_type          = get_sub_field('project_post_type') ; // Field Type Group Product Post Type. Post Query = project,
-    $blog_post_type             = get_sub_field('blog_post_type') ; // Field Type Group Product Post Type. Post Query = blog,
+$query = new WP_Query([
+    'post_type'      => $post_type ?: 'post',
+    'posts_per_page' => $limit,
+    'orderby'        => 'date',
+    'order'          => 'DESC'
+]);
 
 
 ?>
 
-<section class="layout-padding">
-    <div class="post-card-section-wrapper pt-lg-50 pt-30">
+<?php if($title): ?>
+    <h2><?php echo esc_html($title); ?></h2>
+<?php endif; ?>
 
-        <?php if ( $post_card == 'product' ) :  
-                $products = $post_card['product_post_type'] ;
-            ?>
-        <?php if ( $products == 'manual' ) :  
-                $manual_post_type = $products['manual_post_type'];
-            ?>
+<div class="latest-posts">
 
-            <?php foreach ( $manual_post_type as $post ) : ?>
+<?php if($query->have_posts()): ?>
+    <?php while($query->have_posts()): $query->the_post(); ?>
 
-                    <h4><?php the_title($post); ?></h4>
+        <article>
+            <h3><?php the_title(); ?></h3>
+            <p><?php the_excerpt(); ?></p>
+            <a href="<?php the_permalink(); ?>">Read More</a>
+        </article>
 
-                <?php endforeach; ?>
+    <?php endwhile; ?>
+<?php endif; ?>
 
+</div>
 
-        <?php endif; ?>
-
-    </div>
-</section>
-
-<h4> Imran Hossain</h4>
+<?php wp_reset_postdata(); ?>
