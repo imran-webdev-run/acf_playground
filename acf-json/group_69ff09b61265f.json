@@ -797,11 +797,11 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_6a02ceb32a8ba",
-                            "label": "Post Type",
+                            "key": "field_6a02f71c496f6",
+                            "label": "Data Source",
                             "name": "post_type",
                             "aria-label": "",
-                            "type": "select",
+                            "type": "button_group",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -810,47 +810,140 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": [],
-                            "default_value": false,
+                            "choices": {
+                                "latest": "Latest",
+                                "manual": "Manually Post"
+                            },
+                            "default_value": "manual",
                             "return_format": "value",
-                            "multiple": 0,
                             "allow_null": 0,
                             "allow_in_bindings": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": "",
-                            "create_options": 0,
-                            "save_options": 0
+                            "layout": "horizontal"
                         },
                         {
-                            "key": "field_6a02cef52a8bb",
-                            "label": "",
-                            "name": "Posts_Limit",
+                            "key": "field_6a02f8adc3a1b",
+                            "label": "Latest Post Type Source",
+                            "name": "latest_post_type_source",
                             "aria-label": "",
-                            "type": "number",
-                            "instructions": "",
+                            "type": "group",
+                            "instructions": "Display the latest posts dynamically from the selected source.",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6a02f71c496f6",
+                                        "operator": "==",
+                                        "value": "latest"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": 5,
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6a02ceb32a8ba",
+                                    "label": "Source Type",
+                                    "name": "source_type",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "post": "Post",
+                                        "page": "Page",
+                                        "product": "Product",
+                                        "project": "Project"
+                                    },
+                                    "default_value": false,
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "create_options": 0,
+                                    "save_options": 0
+                                },
+                                {
+                                    "key": "field_6a02f8d6c3a1c",
+                                    "label": "Post Perpage",
+                                    "name": "post_perpage",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 5,
+                                    "min": "",
+                                    "max": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_6a02f949ecfe8",
+                            "label": "Manually Post",
+                            "name": "manually_post",
+                            "aria-label": "",
+                            "type": "relationship",
+                            "instructions": "Choose specific posts or categories to showcase in this section",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6a02f71c496f6",
+                                        "operator": "==",
+                                        "value": "manual"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": "",
+                            "post_status": "",
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "return_format": "object",
                             "min": "",
                             "max": "",
                             "allow_in_bindings": 0,
-                            "placeholder": "",
-                            "step": "",
-                            "prepend": "",
-                            "append": ""
+                            "elements": "",
+                            "bidirectional": 0,
+                            "bidirectional_target": []
                         },
                         {
-                            "key": "field_6a02cf052a8bc",
-                            "label": "Title",
-                            "name": "title",
+                            "key": "field_6a0309f68b9f4",
+                            "label": "Columns",
+                            "name": "columns",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "button_group",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -859,12 +952,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Posts LimitPosts LimitPosts LimitPosts LimitPosts Limit",
-                            "maxlength": "",
+                            "choices": {
+                                "2": "2 Columns",
+                                "3": "3 Columns",
+                                "4": "4 Columns"
+                            },
+                            "default_value": 4,
+                            "return_format": "value",
+                            "allow_null": 0,
                             "allow_in_bindings": 0,
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
+                            "layout": "horizontal"
                         }
                     ],
                     "min": "",
@@ -894,5 +991,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1778569403
+    "modified": 1778584578
 }

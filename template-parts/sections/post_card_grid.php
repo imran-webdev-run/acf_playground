@@ -1,37 +1,87 @@
 <?php
+    $post_type = get_sub_field('post_type') ; // ACF Button Group With Post Type : latest, manual
     
-$post_type = get_field('post_source');
-$limit     = get_field('posts_limit') ?: 5;
-$title     = get_field('section_title');
+    $latest_post_type_source = get_sub_field('latest_post_type_source') ; // ACF Group Field : Latest Post Query
+    $post_perpage = $latest_post_type_source['post_perpage'] ; // ACF Number Field : Post Perpage
 
-$query = new WP_Query([
-    'post_type'      => $post_type ?: 'post',
-    'posts_per_page' => $limit,
-    'orderby'        => 'date',
-    'order'          => 'DESC'
-]);
+    $columns = get_sub_field('columns')
+    
 
 
 ?>
 
-<?php if($title): ?>
-    <h2><?php echo esc_html($title); ?></h2>
-<?php endif; ?>
 
-<div class="latest-posts">
 
-<?php if($query->have_posts()): ?>
-    <?php while($query->have_posts()): $query->the_post(); ?>
+<section class="layout-padding">
+    <div class="post-card-section">
 
-        <article>
-            <h3><?php the_title(); ?></h3>
-            <p><?php the_excerpt(); ?></p>
-            <a href="<?php the_permalink(); ?>">Read More</a>
-        </article>
+        <?php if ( $post_type == 'latest') : ?>
 
-    <?php endwhile; ?>
-<?php endif; ?>
+            <div class="latest-post-card-items">
+                <?php 
+                    $latest_posts = new WP_Query(array(
+                        'post_type'         => $latest_post_type_source,
+                        'posts_per_page'    => $post_perpage,
+                    ));
+                    ?>
+                <?php if ( $latest_posts->have_posts()) : ?>
+                    <?php while ( $latest_posts->have_posts()) : $latest_posts->the_post() ; ?>
+                    <div class="latest-post-card-item">
+                        <div class="post-thumb">
+                            <?php the_post_thumbnail(); ?>
+                        </div>
+                        <h3><?php the_title(); ?></h3>
+                        <div class="short-description">
+                            <?php the_excerpt(); ?>
+                        </div>
+                        <div class="box-footer">
+                            <a href="<?php the_permalink(); ?>" class="site-btn">
+                                Lees Blog
+                            </a>
+                        </div>
+                    </div>
+                    <?php endwhile; endif; ?>
 
-</div>
+                <?php wp_reset_postdata(); ?>
+            </div>
 
-<?php wp_reset_postdata(); ?>
+        <?php elseif ( $post_type == 'manual' ) : ?>
+
+            <div class="manually-post-card-items">
+
+                <?php $manually_post = get_sub_field('manually_post'); 
+                        if ( $manually_post ) :
+               
+                    foreach ( $manually_post as $post ) : 
+                        setup_postdata( $post ) ;
+                ?>
+
+                <div class="product-item">
+                    <div class="product-inner">
+                        <div class="post-thumb">
+                            <?php the_post_thumbnail(); ?>
+                        </div>
+                        <h3><?php the_title(); ?></h3>
+                        <div class="short-description">
+                            <?php the_excerpt(); ?>
+                        </div>
+                        <div class="box-footer">
+                            <a href="<?php the_permalink(); ?>" class="site-btn">
+                                Lees Blog
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <?php endforeach;  wp_reset_postdata(); endif; ?>
+
+            </div>
+
+        <?php endif; ?>
+
+    </div>
+</section>
+
+
+
+
