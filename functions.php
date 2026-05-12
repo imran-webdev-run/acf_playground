@@ -161,7 +161,7 @@ function acf_playground_scripts() {
 	}
 
 }
-
+add_action('wp_enqueue_scripts', 'acf_playground_scripts');
 
 
 // ACF Option Page
