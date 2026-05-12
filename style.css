@@ -118,14 +118,19 @@ Smart Media Style Start
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  align-items: center;
+}
+.smart-media-section-wrapper.top {
+	  align-items: start;
+}
+.smart-media-section-wrapper.center {
+	  align-items: center;
 }
 .smart-media-section-wrapper.media-left {
-	grid-template-columns: 600px 1fr;
+	grid-template-columns: 750px 1fr;
   	grid-template-areas: "media content";
 }
 .smart-media-section-wrapper.media-right {
-	grid-template-columns: 1fr 600px;
+	grid-template-columns: 1fr 750px;
   	grid-template-areas: "content media";
 }
 

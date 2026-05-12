@@ -3,6 +3,7 @@
     $smart_section_description = get_sub_field('smart_section_description') ;
     $section_button = get_sub_field('section_button') ;
     
+    $content_position = get_sub_field('content_position') ; 
     $media_position = get_sub_field('media_position') ; 
     $smart_media_type = get_sub_field('smart_media_type') ;
 
@@ -27,7 +28,7 @@
 
 
 <section class="layout-padding">
-    <div class="smart-media-section-wrapper pt-lg-50 pt-30 <?php echo esc_attr($media_position_calss) ; ?>">
+    <div class="smart-media-section-wrapper pt-lg-50 pt-30 <?php echo esc_attr($media_position_calss) ; ?> <?php echo esc_attr($content_position) ; ?>">
 
         <div class="smart-media-section <?php echo esc_attr($section_calss) ; ?>">
             <?php if ($smart_media_type == 'image') : ?>
