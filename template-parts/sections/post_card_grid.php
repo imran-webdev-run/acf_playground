@@ -4,8 +4,17 @@
     $latest_post_type_source = get_sub_field('latest_post_type_source') ; // ACF Group Field : Latest Post Query
     $post_perpage = $latest_post_type_source['post_perpage'] ; // ACF Number Field : Post Perpage
 
+    $compact_mode = get_sub_field('compact_mode') ; // ACF True/False Field : Show / Hide Post content when list view
+
     $layout_style = get_sub_field('layout_style');
-    $columns = get_sub_field('columns');
+    if ( $layout_style == 'grid'){
+        $layout_class = 'grid';
+        $columns = get_sub_field('columns');
+    } elseif ( $layout_style == 'list') {
+        $layout_class = 'list';
+    } elseif ( $layout_style == 'carousel') {
+        $layout_class = 'carousel';
+    }
     
     
 
@@ -19,7 +28,7 @@
 
         <?php if ( $post_type == 'latest') : ?>
 
-            <div class="latest-post-card-items <?php if ( $layout_style === 'grid') : ?> <?php echo esc_attr( $layout_style ) ; ?> <?php endif; ?> columns-<?php echo esc_attr( $columns ) ; ?> ">
+            <div class="latest-post-card-items <?php echo esc_attr( $layout_class ) ; ?> <?php echo ( $layout_style === 'grid') ? 'columns-' . esc_attr( $columns ) : '' ; ?>  ">
                 <?php 
                     $latest_posts = new WP_Query(array(
                         'post_type'         => $latest_post_type_source,
@@ -49,7 +58,7 @@
 
         <?php elseif ( $post_type == 'manual' ) : ?>
 
-            <div class="manually-post-card-items <?php echo esc_attr( $layout_style ) ; ?> columns-<?php echo esc_attr( $columns ) ; ?>">
+            <div class="manually-post-card-items <?php echo esc_attr( $layout_class ) ; ?> <?php echo ( $layout_style === 'grid' ) ? 'columns-' . esc_attr( $columns ) : '' ; ?>">
 
                 <?php $manually_post = get_sub_field('manually_post'); 
                         if ( $manually_post ) :
@@ -60,17 +69,25 @@
 
                 <div class="product-item">
                     <div class="product-inner">
-                        <div class="post-thumb">
+
+                        <?php if ( $compact_mode == true ) : ?>
+
+                        <div class="post-thumb media">
                             <?php echo get_the_post_thumbnail( $post->ID ); ?>
                         </div>
-                        <h3><?php the_title(); ?></h3>
-                        <div class="short-description">
-                            <?php the_excerpt(); ?>
-                        </div>
-                        <div class="box-footer">
-                            <a href="<?php the_permalink(); ?>" class="site-btn">
-                                Lees Blog
-                            </a>
+
+                        <?php endif; ?>
+                        
+                        <div class="post-card-content">
+                            <h3><?php the_title(); ?></h3>
+                            <div class="short-description">
+                                <?php the_excerpt(); ?>
+                            </div>
+                            <div class="box-footer">
+                                <a href="<?php the_permalink(); ?>" class="site-btn">
+                                    Lees Blog
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

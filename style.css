@@ -250,3 +250,33 @@ Feature Section Style Start
 Feature Section Style End
 ===========================================
 */
+
+/* 
+===========================================
+Post Card Grid Section Style Start
+===========================================
+*/
+.grid {
+	display: grid;
+	gap: 48px;
+}
+.post-thumb {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.post-card-content {
+	margin-top: 20px;
+}
+.carousel .slick-slide {
+    padding: 0 12px;
+}
+
+.carousel .slick-list {
+    margin: 0 -12px;
+}
+
+/* 
+===========================================
+Post Card Grid Section Style End
+===========================================
+*/

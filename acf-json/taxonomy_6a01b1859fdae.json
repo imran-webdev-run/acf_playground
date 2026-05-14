@@ -5,7 +5,7 @@
     "active": true,
     "taxonomy": "wevdevelopment",
     "object_type": [
-        "project"
+        "product"
     ],
     "advanced_configuration": 1,
     "import_source": "",
@@ -20,17 +20,17 @@
         "update_item": "Update WevDevelopment",
         "add_new_item": "Add New WevDevelopment",
         "new_item_name": "New WevDevelopment Name",
+        "parent_item": "",
+        "parent_item_colon": "",
         "search_items": "Search WevDevelopments",
-        "popular_items": "Popular WevDevelopments",
-        "separate_items_with_commas": "Separate wevdevelopments with commas",
-        "add_or_remove_items": "Add or remove wevdevelopments",
-        "choose_from_most_used": "Choose from the most used wevdevelopments",
         "most_used": "",
         "not_found": "No wevdevelopments found",
         "no_terms": "No wevdevelopments",
         "name_field_description": "",
         "slug_field_description": "",
+        "parent_field_description": "",
         "desc_field_description": "",
+        "filter_by_item": "",
         "items_list_navigation": "WevDevelopments list navigation",
         "items_list": "WevDevelopments list",
         "back_to_items": "← Go to wevdevelopments",
@@ -46,7 +46,7 @@
     },
     "public": 1,
     "publicly_queryable": 1,
-    "hierarchical": 0,
+    "hierarchical": 1,
     "show_ui": 1,
     "show_in_menu": 1,
     "show_in_nav_menus": 1,
@@ -67,9 +67,9 @@
     "default_term": {
         "default_term_enabled": "0"
     },
-    "sort": 0,
+    "sort": 1,
     "meta_box": "default",
     "meta_box_cb": "",
     "meta_box_sanitize_cb": "",
-    "modified": 1778496302
+    "modified": 1778752596
 }
