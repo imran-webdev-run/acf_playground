@@ -280,3 +280,121 @@ Post Card Grid Section Style Start
 Post Card Grid Section Style End
 ===========================================
 */
+
+/* 
+===========================================
+Pricing Section Style Start
+===========================================
+*/
+.pricing-section {
+	background: hsl(220deg 14% 96% / 30%);
+}
+.pricing-item {
+	display: grid;
+	justify-items: center;
+	width: 800px;
+	margin: 0 auto;
+}
+.pricing-item-inner {
+  width: 243px;
+  background: hsl(0 0% 100%);
+  border: 1px solid hsl(220 13% 91%);
+  padding: 24px;
+  border-radius: 12px;
+}
+.pricing-item-inner h5 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.pricing-item-inner .price .price-amount {
+  font-size: 24px;
+  font-weight: 800;
+}
+.pricing-item-inner .feature-list ul {
+  padding-left: 0;
+}
+.pricing-item-inner .feature-list ul li {
+  list-style: none;
+  margin-top: 8px;
+}
+.feature-list ul li svg {
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+	stroke: hsl(217 91% 60%);
+}
+
+.pricing-item-inner.highlight {
+	background: hsl(217deg 91% 60% / 5%);
+	border: 1px solid hsl(217 91% 60%);
+	padding: 24px;
+	border-radius: 12px;
+	position: relative;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
+	transform: scale(1.05);
+}
+.pricing-item-inner .price {
+	margin-top: 24px;
+}
+.feature-list {
+	margin-top: 20px;
+}
+.pricing-item-inner .cta-button {
+	color: hsl(222 47% 11%);
+	background: #ddd;
+	text-align: center;
+	border-radius: 5px;
+	margin-top: 32px;
+}
+.cta-button a {
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	display: block;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+.pricing-item-inner.highlight .cta-button {
+  background: hsl(217 91% 60%);
+}
+.pricing-item-inner.highlight .cta-button a {
+  color: hsl(0 0% 100%);
+}
+.pricing-item-inner.highlight::after {
+	position: absolute;
+	top: -11px;
+	left: 50%;
+	content: "Populer";
+	background: hsl(217 91% 60%);
+	width: 79px;
+	height: 17px;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	padding-top: 3px;
+	border-radius: 20px;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+/* 
+===========================================
+Pricing Section Style End
+===========================================
+*/
+
+/* 
+===========================================
+Testimonial Section Style Start
+===========================================
+*/
+.rating-star svg {
+	fill: rgb(250 204 21);
+	color: rgb(250 204 21);
+}
+/* 
+===========================================
+Testimonial Section Style End
+===========================================
+*/
