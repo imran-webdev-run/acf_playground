@@ -236,6 +236,38 @@
                             "allow_in_bindings": 0
                         },
                         {
+                            "key": "field_6a093da0a728f",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_69ff18a951f9c",
+                                        "operator": "==",
+                                        "value": "color"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "solid": "Solid",
+                                "gradient": "Gradient"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "layout": "horizontal"
+                        },
+                        {
                             "key": "field_69ff186651f9b",
                             "label": "BG Color",
                             "name": "bg_color",
@@ -246,9 +278,63 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_69ff18a951f9c",
+                                        "field": "field_6a093da0a728f",
                                         "operator": "==",
-                                        "value": "color"
+                                        "value": "solid"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "enable_opacity": 0,
+                            "return_format": "string",
+                            "allow_in_bindings": 0
+                        },
+                        {
+                            "key": "field_6a093e7509bc4",
+                            "label": "Gradient_1",
+                            "name": "gradient_1",
+                            "aria-label": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6a093da0a728f",
+                                        "operator": "==",
+                                        "value": "gradient"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "enable_opacity": 0,
+                            "return_format": "string",
+                            "allow_in_bindings": 0
+                        },
+                        {
+                            "key": "field_6a093eb209bc5",
+                            "label": "Gradient_2",
+                            "name": "gradient_2",
+                            "aria-label": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6a093da0a728f",
+                                        "operator": "==",
+                                        "value": "gradient"
                                     }
                                 ]
                             ],
@@ -1691,5 +1777,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1778914409
+    "modified": 1778991724
 }

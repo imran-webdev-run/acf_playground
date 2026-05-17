@@ -41,11 +41,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 Hero Style Start
 ===========================================
 */
-.bg-type-color .hero-inner {
+.bg-type-color .hero-inner, .bg-type-gradient .hero-inner {
 	border-radius: 20px;
 }
 
-.bg-type-color .hero-content {
+.bg-type-color .hero-content, .bg-type-gradient .hero-content {
 	text-align: center;
 	color: #fff;
 	padding-bottom: 50px;
@@ -458,5 +458,74 @@ Testimonial Section Style Start
 /* 
 ===========================================
 Testimonial Section Style End
+===========================================
+*/
+
+/* 
+===========================================
+Accordion Section Style Start
+===========================================
+*/
+.accordion-items-wrapper {
+	width: 672px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.accordion-item {
+  border: 1px solid hsl(220 13% 91%);
+  border-radius: 12px;
+}
+.accordion-question {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 16px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 16px;
+}
+.accordion-question h4 {
+	font-size: 18px;
+	margin-bottom: 0;
+}
+.dowun-arrow-icon {
+	width: 16px;
+	height: 16px;
+	transition: all 0.3s ease;
+}
+
+.accordion-answer span {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: block;
+  padding-bottom: 12px;
+}
+
+
+.accordion-answer {
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: all 0.3s ease;
+	max-height: 0;
+  	border-top: 1px solid hsl(220 13% 91%);
+}
+.active .accordion-answer {
+	opacity: 1;
+	padding-top: 12px;
+	transition: all 0.7s ease;
+	transform: translateY(0);
+	max-height: 46px;
+}
+.active .dowun-arrow-icon {
+	rotate: 180deg;
+	transition: all 0.3s ease;
+}
+
+/* 
+===========================================
+Accordion Section Style End
 ===========================================
 */

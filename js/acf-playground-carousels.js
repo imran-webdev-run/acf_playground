@@ -17,6 +17,14 @@ jQuery(document).ready(function ($) {
         autoplaySpeed: 3000,
     });
 
+    // $(".accordion-item").first().addClass("active");
+
+    $(".accordion-item").on("click", function () {
+
+        $(".accordion-item").removeClass("active"); 
+        $(this).addClass("active"); 
+        });
     
 
 });
+
