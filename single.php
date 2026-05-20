@@ -10,13 +10,13 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main layout-padding pt-lg-100 pb-lg-100">
 
 		<?php
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			get_template_part( 'inc/single-post', get_post_type() );
 
 			the_post_navigation(
 				array(
@@ -36,5 +36,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -1,18 +1,18 @@
 {
     "key": "taxonomy_6a01b1859fdae",
-    "title": "WevDevelopments",
+    "title": "WebDevelopments",
     "menu_order": 0,
     "active": true,
-    "taxonomy": "wevdevelopment",
+    "taxonomy": "webdevelopment",
     "object_type": [
-        "product"
+        "project"
     ],
     "advanced_configuration": 1,
     "import_source": "",
     "import_date": "",
     "labels": {
-        "name": "WevDevelopments",
-        "singular_name": "WevDevelopment",
+        "name": "WebDevelopments",
+        "singular_name": "WebDevelopment",
         "menu_name": "WevDevelopments",
         "all_items": "All WevDevelopments",
         "edit_item": "Edit WevDevelopment",
@@ -20,8 +20,8 @@
         "update_item": "Update WevDevelopment",
         "add_new_item": "Add New WevDevelopment",
         "new_item_name": "New WevDevelopment Name",
-        "parent_item": "",
-        "parent_item_colon": "",
+        "parent_item": "Parent WebDevelopment",
+        "parent_item_colon": "Parent WebDevelopment:",
         "search_items": "Search WevDevelopments",
         "most_used": "",
         "not_found": "No wevdevelopments found",
@@ -30,7 +30,7 @@
         "slug_field_description": "",
         "parent_field_description": "",
         "desc_field_description": "",
-        "filter_by_item": "",
+        "filter_by_item": "Filter by webdevelopment",
         "items_list_navigation": "WevDevelopments list navigation",
         "items_list": "WevDevelopments list",
         "back_to_items": "← Go to wevdevelopments",
@@ -71,5 +71,5 @@
     "meta_box": "default",
     "meta_box_cb": "",
     "meta_box_sanitize_cb": "",
-    "modified": 1778752596
+    "modified": 1779275584
 }

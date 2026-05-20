@@ -946,7 +946,6 @@
                                     },
                                     "choices": {
                                         "post": "Post",
-                                        "page": "Page",
                                         "product": "Product",
                                         "project": "Project",
                                         "testimonial": "Testimonial"
@@ -1777,5 +1776,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1778991724
+    "modified": 1779097868
 }

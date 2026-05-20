@@ -73,7 +73,9 @@
         "thumbnail",
         "custom-fields"
     ],
-    "taxonomies": "",
+    "taxonomies": [
+        "app"
+    ],
     "has_archive": true,
     "has_archive_slug": "",
     "rewrite": {
@@ -88,5 +90,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1778565311
+    "modified": 1779276936
 }

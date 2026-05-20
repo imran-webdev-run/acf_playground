@@ -7,10 +7,14 @@
  * @package ACF_Playground
  */
 
+
+
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main layout-padding">
+
+	
 
 		<?php if ( have_posts() ) : ?>
 
@@ -21,6 +25,11 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
+			<div class="post-type-filter">
+				<?php get_template_part( 'inc/archive-filter' ); ?>
+			</div>
+			
+		<div class="project-filter">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -33,10 +42,15 @@ get_header();
 				 */
 				get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;
-
-			the_posts_navigation();
-
+			endwhile; ?>
+		</div>
+		<?php
+			the_posts_pagination( array(
+				'mid_size'        => 1,
+				'prev_text'       => __( 'Previous', 'acf_playground' ),
+				'next_text'       => __( 'Next', 'acf_playground' ),
+				'screen_reader_text' => __( 'Posts Navigation', 'acf_playground' ),
+			));
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -47,5 +61,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

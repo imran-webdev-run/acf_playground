@@ -529,3 +529,78 @@ Accordion Section Style Start
 Accordion Section Style End
 ===========================================
 */
+
+/* 
+===========================================
+Product Filter Section Style Star
+===========================================
+*/
+.archive-nav a {
+	text-decoration: none;
+	background: #87ceeb24;
+	padding: 12px 24px;
+	border-radius: 8px;
+	display: inline-block;
+	font-size: 16px;
+	line-height: 100%;
+	border: 1px solid #87ceeb4a;
+	color: #005070;
+}
+
+.project-filter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 24px;
+}
+.project-thumb {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.project-thumb a {
+  display: block;
+}
+.project-info {
+  margin-top: 24px;
+}
+.project-title h2 a {
+  font-size: 32px;
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+.nav-links .page-numbers {
+  background: #87ceeb2b;
+  padding: 12px;
+  display: flex;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.nav-links .page-numbers.current {
+  background: saddlebrown;
+  color: #fff;
+}
+.nav-links .prev, .nav-links .next {
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	border: 1px solid rgb(168, 83, 208);
+}
+.nav-links .prev svg, .nav-links .next svg {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/* 
+===========================================
+Product Filter Section Style End
+===========================================
+*/

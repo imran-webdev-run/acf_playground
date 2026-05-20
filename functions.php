@@ -195,6 +195,8 @@ function new_standard_acf_option_pages() {
 
 add_action('acf/init', 'new_standard_acf_option_pages');
 
+
+
 // ACF dynamic post type filter
 add_filter('acf/load_field/name=source_type', function($field){
 
@@ -203,7 +205,7 @@ add_filter('acf/load_field/name=source_type', function($field){
     $field['choices'] = [];
 
     foreach($source_types as $source_type){
-        if(in_array($source_type->name, ['attachment'])){
+        if(in_array($source_type->name, ['attachment', 'page', 'post'])){
             continue;
         }
 
@@ -212,3 +214,23 @@ add_filter('acf/load_field/name=source_type', function($field){
 
     return $field;
 });
+
+
+
+add_action( 'init', function() {
+
+    register_taxonomy( 'project_cat', array( 'projects' ), array(
+        'labels' => array(
+            'name'          => 'Project Categories',
+            'singular_name' => 'Project Category',
+        ),
+        'public'       => true,
+		'has_archive'   => true,
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        'rewrite'      => array(
+            'slug' => 'project-category',
+        ),
+    ) );
+
+} );
