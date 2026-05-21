@@ -15,7 +15,7 @@
 ?>
 
 <nav class="archive-nav">
-    <a href="<?php echo esc_url( $archive_url ); ?>">All</a>
+    <a href="<?php echo esc_url( $archive_url ); ?>"><?php echo esc_html_e( 'All' , 'acf-playground' ) ?></a>
 
     <?php if ( !empty( $terms ) && !is_wp_error( $terms )) : ?> 
         <?php foreach ( $terms as $term ) : ?>

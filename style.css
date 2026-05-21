@@ -563,8 +563,13 @@ Product Filter Section Style Star
 .project-info {
   margin-top: 24px;
 }
+.project-title h2 {
+	margin-bottom: 0;
+	margin-top: 10px;
+}
 .project-title h2 a {
   font-size: 32px;
+  line-height: 120%;
   text-decoration: none;
 }
 .nav-links {
@@ -598,6 +603,30 @@ Product Filter Section Style Star
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.archive-nav {
+  padding: 2px;
+  border-radius: 12px;
+  border: 1px solid #87ceeb4a;
+}
+.post-category {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	gap: 8px;
+}
+.post-category a {
+	text-decoration: none;
+	padding: 6px 12px;
+	background: #87ceeb24;
+	border: 1px solid #87ceeb4a;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	font-size: 13px;
+	line-height: 100%;
+	color: #005070;
 }
 /* 
 ===========================================
